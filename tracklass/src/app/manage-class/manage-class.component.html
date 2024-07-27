@@ -1,0 +1,19 @@
+<div class="manage-classes-container">
+  <h1>Manage Classes</h1>
+  
+  <form [formGroup]="classForm" (ngSubmit)="createClass()">
+    <mat-form-field appearance="fill">
+      <mat-label>Class Name</mat-label>
+      <input matInput formControlName="name" required>
+      <mat-error *ngIf="classForm.get('name')?.invalid && classForm.get('name')?.touched">
+        Class name is required
+      </mat-error>
+    </mat-form-field>
+    
+    <button mat-raised-button color="primary" type="submit">Add Class</button>
+  </form>
+  
+  <div *ngFor="let class of classes" class="class-item">
+    {{ class.name }}
+  </div>
+</div>

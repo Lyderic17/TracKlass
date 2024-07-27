@@ -1,0 +1,6 @@
+<h1>Manage Student Points</h1>
+<div *ngFor="let student of students">
+  <p>{{ student.name }}: {{ student.points }} points</p>
+  <button (click)="addPoints(student._id, 1)">Add Point</button>
+  <button (click)="subtractPoints(student._id, 1)">Subtract Point</button>
+</div>

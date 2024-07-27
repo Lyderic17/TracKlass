@@ -1,0 +1,15 @@
+<div class="header">
+  <button mat-icon-button (click)="toggleSidenav()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="app-title">TrackKlass</span>
+  <span class="spacer"></span>
+  <a mat-button routerLink="/dashboard" *ngIf="isLoggedIn">Dashboard</a>
+  <a mat-button routerLink="/classroom-layout" *ngIf="isLoggedIn">Classroom Layout</a>
+  <a mat-button routerLink="/student-points" *ngIf="isLoggedIn">Student Points</a>
+  <a mat-button routerLink="/manage-students" *ngIf="isLoggedIn">Manage Students</a>
+  <span *ngIf="isLoggedIn">Welcome, {{ currentUser }}!</span>
+  <button mat-button *ngIf="isLoggedIn" (click)="logout()">Logout</button>
+  <a mat-button routerLink="/login" *ngIf="!isLoggedIn">Login</a>
+  <a mat-button routerLink="/register" *ngIf="!isLoggedIn">Register</a>
+</div>

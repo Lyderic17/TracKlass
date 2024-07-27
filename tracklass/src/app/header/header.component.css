@@ -1,0 +1,65 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+}
+.header{ 
+  background-color: #1976d2; /* Material Blue */
+  color: white;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  margin-right: 100px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #555;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #777;
+}
+mat-toolbar {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.app-title {
+  margin-left: 20px;
+}
+
+.spacer {
+  flex: 1;
+}
+

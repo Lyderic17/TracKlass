@@ -1,0 +1,21 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  mat-card {
+    width: 400px;
+    padding: 20px;
+  }
+  
+  .error {
+    color: red;
+    margin-top: 10px;
+  }
+  
+  mat-spinner {
+    margin-top: 20px;
+  }
+  

@@ -1,0 +1,29 @@
+<div class="classroom-layout-container">
+  <h1>Classroom Layout</h1>
+
+  <form (ngSubmit)="onClassChange()">
+    <mat-form-field appearance="fill">
+      <mat-label>Select Class</mat-label>
+      <mat-select [(ngModel)]="selectedClass" name="selectedClass" required>
+        <mat-option *ngFor="let class of classes" [value]="class._id">{{ class.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Load Class Layout</button>
+  </form>
+
+  <div class="students-list" cdkDropListGroup>
+    <div *ngFor="let student of students" cdkDrag [cdkDragData]="student" class="student-item" cdkDrag>
+      {{ student.name }}
+    </div>
+  </div>
+
+  <div id="container" class="layout-canvas" cdkDropList (cdkDropListDropped)="onDrop($event)"></div>
+
+  <form (ngSubmit)="saveLayout()">
+    <mat-form-field appearance="fill">
+      <mat-label>Save Layout As</mat-label>
+      <input matInput [(ngModel)]="newLayoutName" name="newLayoutName" required>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Save Layout</button>
+  </form>
+</div>

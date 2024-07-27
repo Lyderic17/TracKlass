@@ -1,0 +1,12 @@
+.manage-students-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .student-item {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+  

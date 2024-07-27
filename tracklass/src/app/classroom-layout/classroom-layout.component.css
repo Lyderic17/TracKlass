@@ -1,0 +1,27 @@
+.classroom-layout-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.students-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+.student-item {
+  padding: 10px;
+  background-color: #e0e0e0;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.layout-canvas {
+  border: 1px solid #ccc;
+  width: 800px;
+  height: 600px;
+  position: relative;
+}

@@ -1,0 +1,12 @@
+.manage-classes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .class-item {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+  
