@@ -9,4 +9,6 @@ router.post('/', authMiddleware, classController.createClass);
 // Route to get all classes for the logged-in user
 router.get('/', authMiddleware, classController.getClasses);
 
+router.get('/:classId', classController.getClassById);
+
 module.exports = router;

@@ -22,9 +22,12 @@
     "@angular/platform-server": "^18.1.2",
     "@angular/router": "^18.1.0",
     "@auth0/angular-jwt": "^5.2.0",
+    "gsap": "^3.12.5",
     "konva": "^9.3.14",
     "rxjs": "~7.8.0",
+    "spin-wheel": "^5.0.0",
     "tslib": "^2.3.0",
+    "wheel-fortune": "^1.5.1",
     "zone.js": "~0.14.3"
   },
   "devDependencies": {

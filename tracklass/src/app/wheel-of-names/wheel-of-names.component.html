@@ -1,0 +1,25 @@
+<div class="wheel-container">
+    <h1>Wheel of Names</h1>
+    <mat-form-field appearance="fill">
+      <mat-label>Select Class</mat-label>
+      <mat-select [(ngModel)]="selectedClass" (selectionChange)="onClassChange()">
+        <mat-option *ngFor="let class of classes" [value]="class">{{ class.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+<!--     <mat-form-field appearance="fill">
+      <mat-label>Select Winner</mat-label>
+      <mat-select [(ngModel)]="predeterminedWinner">
+        <mat-option *ngFor="let student of students" [value]="student">{{ student.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button class="predetermine-button" (click)="predeterminedWinner && predetermineWinner(predeterminedWinner)">Predetermine Winner</button>
+   -->
+    <div class="canvas-wrapper">
+      <canvas #wheelCanvas width="600" height="600"></canvas>
+      <div #winnerDisplay class="winner-display"></div>
+    </div>
+  
+    <button class="spin-button" (click)="spinWheel()">Spin the Wheel</button>
+  </div>
+  

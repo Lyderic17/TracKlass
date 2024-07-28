@@ -11,8 +11,9 @@ export class LayoutService {
   constructor(private http: HttpClient) {}
 
 
-  saveLayout(classId: string, layout: any[]): Observable<any> {
-    return this.http.post(this.apiUrl, { classId, layout });
+
+  saveLayout(classId: string, className: string, layout: any[]): Observable<any> {
+    return this.http.post(this.apiUrl, { classId, className, layout });
   }
 
   getLayout(classId: string): Observable<any[]> {

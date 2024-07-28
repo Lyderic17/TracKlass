@@ -19,10 +19,11 @@ exports.saveLayout = async (req, res) => {
     let existingLayout = await Layout.findOne({ classId });
 
     if (existingLayout) {
-      existingLayout.layout = layout.map(table => ({
-        x: table.x,
-        y: table.y,
-        studentId: table.studentId || null // Ensure studentId is null if not provided
+      existingLayout.layout = layout.map(item => ({
+        x: item.x,
+        y: item.y,
+        studentId: item.studentId || null,
+        type: item.type
       }));
       existingLayout.className = className;
       await existingLayout.save();
@@ -30,10 +31,11 @@ exports.saveLayout = async (req, res) => {
       const newLayout = new Layout({
         classId,
         className,
-        layout: layout.map(table => ({
-          x: table.x,
-          y: table.y,
-          studentId: table.studentId || null // Ensure studentId is null if not provided
+        layout: layout.map(item => ({
+          x: item.x,
+          y: item.y,
+          studentId: item.studentId || null,
+          type: item.type
         }))
       });
       await newLayout.save();

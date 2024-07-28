@@ -25,6 +25,7 @@ import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 
 export function tokenGetter() {
@@ -43,6 +44,7 @@ export function tokenGetter() {
     AppComponent,
     BrowserModule,
     RegisterComponent,
+    DragDropModule,
     HttpClientModule,
     FormsModule,
     CommonModule,

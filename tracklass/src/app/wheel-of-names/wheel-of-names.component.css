@@ -1,0 +1,47 @@
+.wheel-container {
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .canvas-wrapper {
+    position: relative;
+    display: inline-block;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .winner-display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #FF6347;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+  
+  .spin-button,
+  .predetermine-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #FF6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .spin-button:hover,
+  .predetermine-button:hover {
+    background-color: #FF4500;
+  }
+  
