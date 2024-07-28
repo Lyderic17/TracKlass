@@ -1,6 +1,17 @@
 <h1>Manage Student Points</h1>
-<div *ngFor="let student of students">
-  <p>{{ student.name }}: {{ student.points }} points</p>
-  <button (click)="addPoints(student._id, 1)">Add Point</button>
-  <button (click)="subtractPoints(student._id, 1)">Subtract Point</button>
+<div *ngFor="let className of groupedStudents.keys()" class="class-section">
+  <h2>{{ className }}</h2>
+  <mat-divider></mat-divider>
+  <div class="student-list">
+    <div class="student-card" *ngFor="let student of groupedStudents.get(className)">
+      <div class="student-info">
+        <p class="student-name">{{ student.name }}</p>
+        <p class="student-points">{{ student.points }} points</p>
+      </div>
+      <div class="buttons">
+        <button mat-raised-button color="primary" class="btn add" (click)="addPoints(student._id, 1)">Add Point</button>
+        <button mat-raised-button color="warn" class="btn subtract" (click)="subtractPoints(student._id, 1)">Subtract Point</button>
+      </div>
+    </div>
+  </div>
 </div>

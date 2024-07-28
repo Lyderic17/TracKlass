@@ -6,6 +6,7 @@ import { ClassroomLayoutComponent } from './classroom-layout/classroom-layout.co
 import { ManageClassComponent } from './manage-class/manage-class.component';
 import { StudentPointsComponent } from './student-points/student-points.component';
 import { ManageStudentsComponent } from './manage-students/manage-students.component';
+import { WheelOfNamesComponent } from './wheel-of-names/wheel-of-names.component';
 
 
 export const routes: Routes = [
@@ -17,7 +18,9 @@ export const routes: Routes = [
   { path: 'classroom-layout', component: ClassroomLayoutComponent },
   { path: 'manage-classes', component: ManageClassComponent },
   { path: 'student-points', component: StudentPointsComponent },
-  { path: 'manage-students', component: ManageStudentsComponent }
+  { path: 'manage-students', component: ManageStudentsComponent },
+  { path: 'wheel-of-names', component: WheelOfNamesComponent },
+
 
 
 ];

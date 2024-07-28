@@ -4,6 +4,8 @@
   </button>
   <span class="app-title">TrackKlass</span>
   <span class="spacer"></span>
+  <a mat-button routerLink="/wheel-of-names" *ngIf="isLoggedIn">Wheel of names!</a>
+
   <a mat-button routerLink="/dashboard" *ngIf="isLoggedIn">Dashboard</a>
   <a mat-button routerLink="/classroom-layout" *ngIf="isLoggedIn">Classroom Layout</a>
   <a mat-button routerLink="/student-points" *ngIf="isLoggedIn">Student Points</a>
@@ -13,3 +15,4 @@
   <a mat-button routerLink="/login" *ngIf="!isLoggedIn">Login</a>
   <a mat-button routerLink="/register" *ngIf="!isLoggedIn">Register</a>
 </div>
+wheel-of-names

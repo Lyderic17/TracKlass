@@ -1,29 +1,40 @@
 <div class="classroom-layout-container">
   <h1>Classroom Layout</h1>
 
-  <form (ngSubmit)="onClassChange()">
+  <form class="form-container" (ngSubmit)="onClassChange()">
     <mat-form-field appearance="fill">
       <mat-label>Select Class</mat-label>
       <mat-select [(ngModel)]="selectedClass" name="selectedClass" required>
-        <mat-option *ngFor="let class of classes" [value]="class._id">{{ class.name }}</mat-option>
+        <mat-option *ngFor="let class of classes" [value]="class">{{ class.name }}</mat-option>
       </mat-select>
     </mat-form-field>
     <button mat-raised-button color="primary" type="submit">Load Class Layout</button>
   </form>
 
-  <div class="students-list" cdkDropListGroup>
-    <div *ngFor="let student of students" cdkDrag [cdkDragData]="student" class="student-item" cdkDrag>
+  <div class="students-list" cdkDropList (cdkDropListDropped)="onDrop($event)">
+    <div *ngFor="let student of students" cdkDrag [cdkDragData]="student" class="student-item">
       {{ student.name }}
     </div>
   </div>
 
-  <div id="container" class="layout-canvas" cdkDropList (cdkDropListDropped)="onDrop($event)"></div>
+  <div id="container" class="layout-canvas"></div>
 
-  <form (ngSubmit)="saveLayout()">
+  <button mat-raised-button color="accent" (click)="addTable()">Add Table</button>
+  <button mat-raised-button color="accent" (click)="randomPlaceGenerator()">Random Place Generator</button>
+
+  <!-- Error message -->
+  <div *ngIf="errorMessage" class="error-message">
+    <mat-icon>error</mat-icon> {{ errorMessage }}
+  </div>
+
+  <form class="form-container" (ngSubmit)="saveLayout()">
     <mat-form-field appearance="fill">
       <mat-label>Save Layout As</mat-label>
       <input matInput [(ngModel)]="newLayoutName" name="newLayoutName" required>
     </mat-form-field>
     <button mat-raised-button color="primary" type="submit">Save Layout</button>
   </form>
+
+  <!-- Placeholder for the student points popover -->
+  <div #popoverContainer></div>
 </div>

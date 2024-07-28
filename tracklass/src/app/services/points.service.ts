@@ -9,7 +9,7 @@ import { AuthService } from './auth.service';
 })
 export class PointsService {
   private apiUrl = 'http://localhost:3000/api/students';
-
+  private apiUrlClass = 'http://localhost:3000/api';
   constructor(private http: HttpClient, private authService: AuthService) {}
   private getAuthHeaders(): HttpHeaders {
     const token = this.authService.authToken;
@@ -25,10 +25,18 @@ export class PointsService {
   }
 
   addPoints(studentId: string, points: number): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${studentId}/addPoints`, { points, headers: this.getAuthHeaders() });
+    const url = `${this.apiUrl}/${studentId}/addPoints`;
+    const headers = this.getAuthHeaders();
+    return this.http.put(url, { points }, { headers });
   }
 
   subtractPoints(studentId: string, points: number): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${studentId}/subtractPoints`, { points, headers: this.getAuthHeaders() });
+    const url = `${this.apiUrl}/${studentId}/subtractPoints`;
+    const headers = this.getAuthHeaders();
+    return this.http.put(url, { points }, { headers });
+  }
+
+  getClass(classId: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrlClass}/classes/${classId}`);
   }
 }
