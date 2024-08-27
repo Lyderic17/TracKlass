@@ -43,3 +43,4 @@ project_structure.text
 .DS_Store
 Thumbs.db
 .env
+.vercel

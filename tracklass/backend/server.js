@@ -14,11 +14,7 @@ const app = express();
 connectDB();
 
 // CORS
-app.use(cors({
-  origin: 'http://localhost:4200', // Remplacez ceci par l'URL de votre application Angular en production
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true, // Autoriser l'inclusion des cookies dans les requêtes
-}));
+app.use(cors());
 
 // Middleware
 app.use(express.json());
