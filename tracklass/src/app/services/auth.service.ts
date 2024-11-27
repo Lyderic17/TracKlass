@@ -5,12 +5,13 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { Login } from '../models/login.model';
 import { Signup } from '../models/signup.model';
+import { environment } from '../../environments/environment'; // Import environment file
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000/api/auth';
+  private apiUrl = `${environment.apiUrl}/auth`;
   private tokenSubject = new BehaviorSubject<string | null>(null);
   private loggedInSubject = new BehaviorSubject<boolean>(false);
   private usernameSubject = new BehaviorSubject<string | null>(null);
