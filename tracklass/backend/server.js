@@ -13,9 +13,20 @@ const app = express();
 // Connect to database
 connectDB();
 
+const allowedOrigins = [
+  'http://localhost:4200', // Local development
+  'https://tracklass.vercel.app', // Deployed frontend
+];
+
 // CORS
 app.use(cors({
-  origin: 'http://localhost:4200', // Remplacez ceci par l'URL de votre application Angular en production
+  origin: (origin, callback) => {
+    // Allow requests with no origin (e.g., mobile apps or CURL requests)
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    callback(new Error('Not allowed by CORS'));
+  },
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true, // Autoriser l'inclusion des cookies dans les requêtes
 }));
