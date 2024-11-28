@@ -15,8 +15,7 @@ connectDB();
 
 const allowedOrigins = [
   'http://localhost:4200', // Local development
-  'https://tracklass.vercel.app',
-  'https://tracklass-q0r4aqx88-lyderics-projects-d9645fc0.vercel.app/' // Deployed frontend
+  'https://tracklass.vercel.app', // Deployed frontend
 ];
 
 // CORS
